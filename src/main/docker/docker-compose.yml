@@ -3,7 +3,7 @@ version: '3'
 services:
   delay-server:
     container_name: my-site
-    image: winterchen/my-site
+    image: qdw/my-site
     ports:
       - "8080:8089"
     volumes:
