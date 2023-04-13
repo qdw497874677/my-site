@@ -5,7 +5,7 @@ services:
     container_name: my-site
     image: qdw/my-site
     ports:
-      - "8080:8089"
+      - "8080:8080"
     volumes:
       - "./tmp:/tmp"
     environment:
