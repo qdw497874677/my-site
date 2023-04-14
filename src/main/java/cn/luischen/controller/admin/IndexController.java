@@ -9,6 +9,7 @@ import cn.luischen.model.CommentDomain;
 import cn.luischen.model.ContentDomain;
 import cn.luischen.model.LogDomain;
 import cn.luischen.model.UserDomain;
+import cn.luischen.service.local.LocalContent;
 import cn.luischen.service.log.LogService;
 import cn.luischen.service.site.SiteService;
 import cn.luischen.service.user.UserService;
@@ -47,6 +48,9 @@ public class IndexController extends BaseController{
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private LocalContent localContent;
 
 
 
@@ -143,6 +147,15 @@ public class IndexController extends BaseController{
         }
     }
 
+    /**
+     * 刷新本地文章
+     */
+    @GetMapping(value = "/refreshLocal")
+    @ResponseBody
+    public APIResponse saveProfile() {
+        localContent.refresh();
+        return APIResponse.success();
+    }
 
 
 

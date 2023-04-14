@@ -7,6 +7,7 @@ import com.vdurmont.emoji.EmojiParser;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
+import java.io.Closeable;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
@@ -568,6 +569,23 @@ public class Commons {
                 return text.substring(0, len);
             }
             return text;
+        }
+    }
+
+    /**
+     * 关闭流
+     *
+     * @param closeable
+     */
+    public static void closeQuietly(final Closeable closeable) {
+        // no need to log a NullPointerException here
+        if (closeable == null) {
+            return;
+        }
+
+        try {
+            closeable.close();
+        } catch (Exception exc) {
         }
     }
 

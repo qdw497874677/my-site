@@ -48,6 +48,13 @@
         WHERE cid = #{cid, jdbcType=INTEGER}
     </delete>
 
+    <!-- 删除文章 -->
+    <delete id="deleteArticleByTag">
+        DELETE FROM
+        <include refid="BASE_TABLE"/>
+        WHERE tags LIKE CONCAT('%',#{tag, jdbcType=VARCHAR},'%')
+    </delete>
+
     <!-- 更新文章信息 -->
     <update id="updateArticleById" parameterType="cn.luischen.model.ContentDomain">
         UPDATE

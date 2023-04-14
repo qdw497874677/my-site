@@ -44,7 +44,7 @@ public class WebConst {
     /**
      * 文章最多可以输入的文字数
      */
-    public static final int MAX_TEXT_COUNT = 200000;
+    public static final int MAX_TEXT_COUNT = 400000;
 
     /**
      * 文章标题最多可以输入的文字个数

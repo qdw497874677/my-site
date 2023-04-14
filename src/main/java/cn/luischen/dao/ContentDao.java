@@ -32,6 +32,13 @@ public interface ContentDao {
     int deleteArticleById(@Param("cid") Integer cid);
 
     /**
+     * 根据tag删除文章
+     * @param tag
+     * @return
+     */
+    int deleteArticleByTag(@Param("tag") String tag);
+
+    /**
      * 更新文章
      * @param contentDomain
      * @return
